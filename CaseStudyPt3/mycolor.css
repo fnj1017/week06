@@ -82,3 +82,16 @@ input, textarea { margin-top: 10px;
 #floatleft {margin: 10px 50px 10px 10px;
             float: left;
 }
+
+.column-subtotal {
+  width: 90px;
+}
+
+.input-table {
+  width: 36px;
+  display: inline-block;
+}
+
+.input-total {
+  width: 90px;
+}

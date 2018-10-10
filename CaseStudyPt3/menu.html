@@ -4,8 +4,10 @@
   <title>JavaJam Coffee House</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="mycolor.css">
+  <script type ="text/javascript"  src="menu.js" />
   <script type = "text/javascript"  src = "radio_click2.js" >
   </script>
+  
 
 </head>
 <body>
@@ -33,15 +35,23 @@
           <td>Regular house blend, decaffeinated coffee, or flavor of the day.
             <br>
             Endless Cup $2.00</td>
+            <td class="column-subtotal">
+              <input id="inputJavaQuan" class="input-table" type="number" min="0" value="0">
+              <input id="inputJavaSubTotal" class="input-table" type="number" value="0.00" readonly>
+            </td>
         </tr>
         <tr>
           <th>Cafe au Lait</th>
           <td>House blended coffee infused into a smooth, steamed milk.
             <br>
             <label for="auLait">Single $2.00</label>
-            <input type="radio" name="auLait" value = "1"/>
+            <input type="radio" name="auLait" value = "1" checked />
             <label for="auLait">Double $3.00</label>
             <input type="radio" name="auLait" value = "2"/>
+          </td>
+          <td class="column-subtotal">
+              <input id="inputLaitQuan" class="input-table" type="number" min="0" value="0">
+              <input id="inputLaitSubTotal" class="input-table" type="number" value="0.00" readonly>
           </td>
         </tr>
         <tr>
@@ -49,12 +59,21 @@
           <td>Sweetened espresso blended with icy-cold milk and servec in a chilled glass.
             <br>
             <label for="Cappuccino">Single $4.75</label>
-            <input type="radio" name="Cappuccino" value = "1"/>
+            <input type="radio" name="Cappuccino" value = "1" checked />
             <label for="Cappuccino">Double $5.75</label>
             <input type="radio" name="Cappuccino" value = "2"/>
           </td>
+          <td class="column-subtotal">
+              <input id="inputCappQuan" class="input-table" type="number" min="0" value="0">
+              <input id="inputCappSubTotal" class="input-table" type="number" value="0.00" readonly>
+          </td>
         </tr>
       </table>
+      <div style="float: right">
+        <label>Total Price: </label>
+        <input id="inputTotal" class="input-total" type="number" value="0.00" readonly>
+      </div>
+      <div style="clear: both"></div>
     </div>
   </div>
   <footer>
