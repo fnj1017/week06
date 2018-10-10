@@ -1,0 +1,84 @@
+header{ background-color: #D2B58B;
+        color: #00005D;
+        font-size: 150%;
+        margin:auto;
+        padding: 20px 20px 10px 180px;
+}
+
+body {font-family:Verdana, Arial, sans-serif;
+      background-image: url("background.png");
+}
+
+h2 { color: #301A19;
+     font-family: arial, sans-serif;
+}
+ul.pic {
+list-style-image: url("Bullet.png");
+}
+
+a {color: #604A49;}
+footer {background-color: #D2B58B;
+        font-size:85%;
+        text-align: center;
+        clear: right;
+        padding-bottom:20px;
+}
+nav ul {list-style-type: none;
+}
+nav a {text-decoration: none;
+}
+
+table {margin: auto;
+       border: none;
+       width: 490px;
+       border-spacing: 1;
+}
+td, th {padding: 5px;
+        font-family: Arial, sans-serif;
+        border-style: none;
+        font-size: 105%;
+}
+tr:nth-of-type(odd) {background-color: #D2B58B;
+}
+tr:nth-of-type(even) {background-color:#F5F5DD;
+}
+
+form { width: 650px; padding: 5px;}
+label { float: left; clear: left;
+	    display: block; width: 100px;
+	    text-align: right;
+	    padding-right: 10px;
+	    margin-top: 10px; }
+input, textarea { margin-top: 10px;
+                  display: block;
+                width: 150px}
+
+.content {padding: 2px 20px 60px 20px;
+          background-color: #F5F5DD;
+          color: #301A19;}
+
+.info {padding: 0px 20px 1px 300px}
+#wrapper {background-color: #E2D2B0;
+          color: #000066;
+		      margin: auto;
+          width: 900px;
+          box-shadow: 5px 5px 10px black;
+}
+
+#leftcolumn {font-weight: bold;
+             color: #301A19;
+             float: left;
+             width: 150px;
+}
+#rightcolumn {margin-left: 155px;
+              background-color: #ffffff;
+              color: #000000;
+}
+#floatplayer {margin: 10px 10px 0px 0px;
+             float: left;
+}
+#floatinput {margin: 0px 0px 0px 0px;
+             float: left;}
+#floatleft {margin: 10px 50px 10px 10px;
+            float: left;
+}

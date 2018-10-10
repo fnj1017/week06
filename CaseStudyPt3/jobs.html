@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>JavaJam Coffee House</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="mycolor.css">
+  <script type = "text/javascript"  src = "validator2.js" ></script>
+</head>
+<body>
+  <div id="wrapper">
+  <header>
+    <img src="LOGO.png" width="550" height="60" alt="logo">
+  </header>
+  <div id="leftcolumn">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+     </ul>
+    </nav>
+  </div>
+
+  <div id="rightcolumn">
+    <div class="content">
+      <h2>Jobs at JavaJam</h2>
+      <p>Want to work at JaveJam? Fill ou the form below to start your application.
+        Required fields are marked with an asterisk *</p>
+        <form method="post" action="show_post.php">
+          <label for="Name">*Name:</label>
+          <input type="text" name="Name" id="Name" required>
+
+          <label for="Email">*E-mail:</label>
+          <input type="email" name="Email" id="Email" required>
+
+          <label for="Date_input">Start Date:</label>
+          <input type="date" name="Date" id="Date_input">
+
+          <label for="Comments">*Experience:</label>
+          <textarea name="Comments" id="Comments" rows="3" cols="22" required></textarea>
+
+          <input type="submit" value="Apply Now" id="submitButton">
+        </form>
+    </div>
+  </div>
+  <footer>
+    <br>
+    <small><i>Copyright &copy; 2014 Feng Nijing
+      <br>
+      E-mail: <a href="mailto:Nijing@Feng.com">Nijing@Feng.com</a>
+    </i></small>
+  </footer>
+<script type = "text/javascript"  src = "validator2r.js" ></script>
+</body>
+</html>
