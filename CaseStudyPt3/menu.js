@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onchange = function() {
 	var inputJavaQuan = document.getElementById("inputJavaQuan");
 	var inputJavaSubTotal = document.getElementById("inputJavaSubTotal");
 	inputJavaQuan.addEventListener("change", onChangeJavaQuan, false);
@@ -34,7 +34,7 @@ function getJavaSubTotal() {
 }
 
 function getLaitSubTotal() {
-	var selectedVal = getRadioSel('auLait'); //get radio
+	var selectedVal = getRadioSel('auLait'); //get radio select
 	var unitPrice;
 	switch (selectedVal) {
 		case "1":
