@@ -34,7 +34,7 @@ function getJavaSubTotal() {
 }
 
 function getLaitSubTotal() {
-	var selectedVal = getSelectedVal('auLait');
+	var selectedVal = getRadioSel('auLait'); //get radio
 	var unitPrice;
 	switch (selectedVal) {
 		case "1":
@@ -48,7 +48,7 @@ function getLaitSubTotal() {
 }
 
 function getCappSubTotal() {
-	var selectedVal = getSelectedVal('Cappuccino');
+	var selectedVal = getRadioSel('Cappuccino');
 	var unitPrice;
 	switch (selectedVal) {
 		case "1":
@@ -77,7 +77,7 @@ function updateTotal() {
 	inputTotal.value = (getJavaSubTotal() + getLaitSubTotal() + getCappSubTotal()).toFixed(2);
 }
 
-function getSelectedVal(radioName) {
+function getRadioSel(radioName) {
 	var radiosLait = document.getElementsByName(radioName);
 	for (var i = 0; i < radiosLait.length; i++) {
 		if (radiosLait[i].checked) {
@@ -86,4 +86,3 @@ function getSelectedVal(radioName) {
 	}
 	return -1;
 }
-
