@@ -30,7 +30,7 @@ nav a {text-decoration: none;
 
 table {margin: auto;
        border: none;
-       width: 490px;
+       width: 600px;
        border-spacing: 1;
 }
 td, th {padding: 5px;
@@ -84,11 +84,11 @@ input, textarea { margin-top: 10px;
 }
 
 .column-subtotal {
-  width: 90px;
+  width: 120px;
 }
 
 .input-table {
-  width: 36px;
+  width: 50px;
   display: inline-block;
 }
 
