@@ -1,0 +1,131 @@
+body {font-family: Verdana, arial, sans-serif;
+  background: url("color4.png");
+  margin:30px;
+  /*border-right-width: medium;
+  border-right-color: #6F4747;
+  border-bottom-width: medium;
+  border-bottom-color: #6F4747;*/
+}
+header{ background-color: #D2B58B;
+  color: #00005D;
+  font-size: 150%;
+  padding: 15px 10px 10px 140px;
+}
+h2{
+  color: #301A19;
+  font-family: Arial, sans-serif;
+  font-size: 200%;
+}
+h3{
+  background: url("color2.png");
+  font-size: 150%;
+  color: #00005D;
+}
+#wrapper {background: url("color2.png");
+          color: #000066;
+          width: 80%;
+          margin: auto;
+          min-width: 850px;
+          box-shadow: 5px 5px 5px #724747;
+        }
+#leftcolumn{
+  font-weight: bold;
+  color: #301A19;
+  float:left;
+  width:150px;
+}
+#rightcolumn{
+  margin-left:155px;
+  background-color: #ffffff;
+  color:#000000;
+}
+nav ul{
+  list-style-type: none;
+}
+ul li {
+    /*
+     * We want the bullets outside of the list,
+     * so the text is aligned. Now the actual bullet
+     * is outside of the list’s container
+     */
+    list-style-position: inside;
+
+    /*
+     * Because the bullet is outside of the list’s
+     * container, indent the list entirely
+     */
+    margin-left: 1em;
+}
+nav a{
+  text-decoration: none;
+}
+table{
+  /*margin: 2px 20px 60px 20px;*/
+  margin: auto;
+  border: none;
+  width: 600px;
+  border-spacing: 1;
+}
+th{
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  background: url(color2.png);
+  border-style: none;
+}
+td{
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  border-style: none;
+}
+
+tr:nth-of-type(odd){background: url("color1.png");}
+/*tr:nth-of-type(odd){background-color: #D2B58B;}*/
+tr:nth-of-type(even){background: url("color3.png");}
+/*tr:nth-of-type(even){background-color: #F5F5DD;}*/
+/*
+td:nth-child(1){
+  background: url("color3.png");
+  margin: 0px;
+}*/
+.content{
+  padding: 2px 20px 60px 20px;
+  background-color: #F5F5DD;
+  color: #301A19;
+}
+footer{
+  background-color: #D2B58B;
+  font-size: 85%;
+  color: black;
+  text-align: center;
+  clear: right;
+  padding: 10px;
+}
+label{
+  float: left;
+  clear: left;
+  display: block;
+  width: 120px;
+  text-align: right;
+  padding: 2px 1em 0 0;
+  margin-top: 10px;
+}
+
+input[type="checkbox"]{
+  -webkit-appearance: checkbox !important;
+}
+
+.tablecell {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
