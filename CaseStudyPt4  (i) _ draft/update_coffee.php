@@ -46,10 +46,32 @@
   //$result = $db->query($query);
 
   if($result){
-    echo " coffee updated into database.";
+    echo " New price updated into database.";
   }else{
     echo "An error has occurred.  The item was not updated.";
   }
+
+  echo"<br>";
+  echo"<br>";
+  echo"<br>";
+  echo "Price updated at ".date('H:i, jS F Y')."";
+  echo"<br>";
+  echo"<br>";
+
+  $retrieval = "SELECT * FROM `menu`";
+  $display = mysqli_query($db,$retrieval);
+  if (mysqli_num_rows($display) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($display)) {
+        echo "Item: " . $row["name"]. " - Size: " . $row["size"]. " - Price: " . $row["price"]. "<br>";
+    }
+  } else {
+    echo "0 results";
+  }
+
   $db->close();
+  echo"<br>";
+  echo"<br>";
+
   echo '<a href="update_coffee.html">Back</a>';
  ?>
