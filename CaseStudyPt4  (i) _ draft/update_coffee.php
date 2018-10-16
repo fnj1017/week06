@@ -42,8 +42,8 @@
   $query = "UPDATE `menu` SET `price` = $selectedPrice WHERE `name`=  '".$selectedName."' AND `size` = '".$selectedSize."'   ";
   //$query = "insert into just values
     //        ('".$selectedSize."', '".$selectedPrice."', '".$selectedDescription."')";
-
-  $result = $db->query($query);
+  $result = mysqli_query($db,$query);
+  //$result = $db->query($query);
 
   if($result){
     echo " coffee updated into database.";
