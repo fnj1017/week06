@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>JavaJam Coffee House</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrapper">
+    <header>
+      <img src="Banner.png" alt="JavaJam Coffee House" width="700" height="86">
+    </header>
+  <!--</div>-->
+    <div id="leftcolumn">
+      <nav>
+      <ul>
+        <li><a href="coffee_update.html">Product<br>Price<br>Update</a></li>
+      </ul>
+    </nav>
+    </div>
+    <!--<h2> Follow the Winding Road to JavaJam </h2>-->
+  <!--  <img src="windingroad.png" alt="Winding Road" style="width: 50%">-->
+  <div id="rightcolumn">
+    <div class="content">
+      <h2>Update form</h2>
+        <form action="update_coffee.php" method="post">
+          Name: <br>
+          <select name ="selectedName">
+            <option value="Cafe au Lait">Cafe au Lait</option>
+          </select>
+          <br><br>
+          Type: <br>
+          <select name ="selectedSize">
+            <option value="Single">Single</option>
+            <option value="Double">Doblue</option>
+          </select>
+          <br><br>
+          Price: <br>
+          $ &nbsp<input type="number" name="selectedPrice" min="0">
+<!--          <input type="text" name ="selectedPrice" required> -->
+          <br><br>
+<!--          Description: <br>
+          <input type="text" name ="selectedDecription">
+          <br><br> -->
+          <button type="submit" name = "submit" value = "submit"> Save</button>
+        </form>
+    </div>
+    </div>
+    <footer>
+      <small><i>Copyright &copy; 2014 JavaJam Coffee House
+      <br> <a href="mailto:ling@li.com">ling@li.com</a>
+    </i></small>
+    </footer>
+    </body>
+    </html>

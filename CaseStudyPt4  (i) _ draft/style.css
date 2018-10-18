@@ -82,11 +82,11 @@ tr:nth-of-type(odd){background: url("color1.png");}
 /*tr:nth-of-type(odd){background-color: #D2B58B;}*/
 tr:nth-of-type(even){background: url("color3.png");}
 /*tr:nth-of-type(even){background-color: #F5F5DD;}*/
-/*
+
 td:nth-child(1){
   background: url("color3.png");
   margin: 0px;
-}*/
+}
 .content{
   padding: 2px 20px 60px 20px;
   background-color: #F5F5DD;
