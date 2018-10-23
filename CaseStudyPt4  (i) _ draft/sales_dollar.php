@@ -35,43 +35,66 @@
       exit;
     }
 
-    echo '<table border="0" class="table">';
-      echo '<tr>';
-
-        echo '<th>';
-          echo 'Item';
-        echo '</th>';
-        echo '<th>';
-          echo 'Size';
-        echo '</th>';
-        echo '<th>';
-          echo 'Quantity';
-        echo '</th>';
-        echo '<th>';
-          echo 'Subtotal';
-        echo '</th>';
-      echo '</tr>';
-
-      $query = "SELECT `order`.`item`, `order`.`size`, `order`.`qty`, `order`.`amount`,
-      count(`order`.`item`) AS number_of_sales,
+      $query = "SELECT `menu`.`item_id`, `menu`.`name`, `menu`.`size`, `menu`.`price`,
+      count(`order`.`item_id`) AS number_of_sales,
       SUM(`order`.`amount`) AS sales_amount
-      FROM `order`";
+      FROM `order`
+      LEFT JOIN `menu`
+      ON (`menu`.`item_id` = `order`.`item_id`)
+      GROUP BY  `menu`.`item_id`
+      ORDER BY `sales_amount`
+      DESC";
 
-      $retrieval = "SELECT * FROM `order`";
-      $display = mysqli_query($db,$retrieval);
-      if (mysqli_num_rows($display) > 0) {
-        // output data of each row
-        while($row = mysqli_fetch_assoc($display)) {
-            echo "Item: " . $row["item"]. " - Size: " . $row["size"]. " - Quantity: " . $row["qty"]. " - Amount $: " . $row["amount"]."<br>";
-        }
-      } else {
-        echo "0 results";
+      $result = mysqli_query($db,$query);
+      $num_results = $result->num_rows;
+
+      echo '<table border="0" class="table">';
+        echo '<tr>';
+          echo '<th>';
+            echo 'Name';
+          echo '</th>';
+          echo '<th>';
+            echo 'Size';
+          echo '</th>';
+          echo '<th>';
+            echo 'Selling Price';
+          echo '</th>';
+          echo '<th>';
+            echo 'Sold Qty';
+          echo '</th>';
+          echo '<th>';
+            echo 'Total Sale ($)';
+          echo '</th>';
+        echo '</tr>';
+
+      for ($i=0; $i <$num_results; $i++) {
+         $row = $result->fetch_assoc();
+
+      echo '<tr class="form">';
+        echo '<td name="item['.$i.'][name]">';
+         echo htmlspecialchars(stripslashes($row['name']));
+        echo '</td>';
+        echo '<td name="item['.$i.'][size]">';
+         echo htmlspecialchars(stripslashes($row['size']));
+        echo '</td>';
+        echo '<td name="item['.$i.'][price]">';
+         echo htmlspecialchars(stripslashes($row['price']));
+        echo '</td>';
+        echo '<td name="item['.$i.'][total]">';
+         echo htmlspecialchars(stripslashes($row['number_of_sales']));
+        echo '</td>';
+        echo '<td name="item['.$i.'][amount]">';
+         echo htmlspecialchars(stripslashes($row['sales_amount']));
+        echo '</td>';
+
+      echo '</tr>';
       }
+      echo '</table>';
 
       $db->close();
 
-
     ?>
+
   </div>
   </div>
   <footer>
