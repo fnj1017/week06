@@ -36,7 +36,7 @@
     }
 
       $query = "SELECT `menu`.`item_id`, `menu`.`name`, `menu`.`size`, `menu`.`price`,
-      count(`order`.`item_id`) AS number_of_sales,
+      SUM(`order`.`qty`) AS number_of_sales,
       SUM(`order`.`amount`) AS sales_amount
       FROM `order`
       LEFT JOIN `menu`
@@ -49,46 +49,62 @@
       $num_results = $result->num_rows;
 
       echo '<table border="0" class="table">';
+
         echo '<tr>';
+
           echo '<th>';
             echo 'Name';
           echo '</th>';
+
           echo '<th>';
             echo 'Size';
           echo '</th>';
+
           echo '<th>';
-            echo 'Selling Price';
+            echo 'Selnijing Price';
           echo '</th>';
+
           echo '<th>';
             echo 'Sold Qty';
           echo '</th>';
+
           echo '<th>';
             echo 'Total Sale ($)';
           echo '</th>';
+
         echo '</tr>';
 
-      for ($i=0; $i <$num_results; $i++) {
+      for ($i=0; $i < $num_results; $i++) {
          $row = $result->fetch_assoc();
+         if($i==0)
+          $first_row=$row;
+      echo '<tr>';
 
-      echo '<tr class="form">';
-        echo '<td name="item['.$i.'][name]">';
-         echo htmlspecialchars(stripslashes($row['name']));
+        echo '<td "['.$i.']">';
+         echo $row['name'];
         echo '</td>';
-        echo '<td name="item['.$i.'][size]">';
-         echo htmlspecialchars(stripslashes($row['size']));
+
+        echo '<td "['.$i.']">';
+         echo $row['size'];
         echo '</td>';
-        echo '<td name="item['.$i.'][price]">';
-         echo htmlspecialchars(stripslashes($row['price']));
+
+        echo '<td "['.$i.']">';
+         echo $row['price'];
         echo '</td>';
-        echo '<td name="item['.$i.'][total]">';
-         echo htmlspecialchars(stripslashes($row['number_of_sales']));
+
+        echo '<td "['.$i.']">';
+         echo $row['number_of_sales'];
         echo '</td>';
-        echo '<td name="item['.$i.'][amount]">';
-         echo htmlspecialchars(stripslashes($row['sales_amount']));
+
+        echo '<td "['.$i.']">';
+         echo $row['sales_amount'];
         echo '</td>';
 
       echo '</tr>';
       }
+      echo '<tr>';
+          echo "highest sale is ".$first_row['name']." with $".$first_row['sales_amount']."<br><br>";
+      echo '</tr>';
       echo '</table>';
 
       $db->close();
@@ -99,7 +115,7 @@
   </div>
   <footer>
     <small><i>Copyright &copy; 2014 JavaJam Coffee House
-    <br> <a href="mailto:ling@li.com">ling@li.com</a>
+    <br> <a href="mailto:nijing@feng.com">nijing@feng.com</a>
   </i></small>
   </footer>
 </body>
